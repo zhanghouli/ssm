@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<!--namespace就是与此文件对应的Dao接口的全路径-->  
+<mapper namespace="com.cn.dao.IPrintFieldDao" >  
+  <!--如下type的PrintField就是mybatis-config.xml中配置的PrintField-->  
+  <resultMap id="BaseResultMap" type="com.cn.entity.PrintField" >  
+    <id column="ID" property="id" jdbcType="INTEGER" />  
+    <result column="field_name" property="fieldName" jdbcType="VARCHAR" />  
+    <result column="sort_number" property="sortNumber" jdbcType="INTEGER" />  
+    <result column="size" property="size" jdbcType="DECIMAL" />  
+    <result column="is_valid" property="isValid" jdbcType="INTEGER" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />  
+    <result column="create_time" property="createTime" jdbcType="DATE" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />  
+    <result column="modify_time" property="modifyTime" jdbcType="DATE" />
+    <result column="version" property="version" jdbcType="VARCHAR" />  
+    
+  </resultMap>  
+<!--自己配置的查询表所有数据的sql-->  
+  <select id="selectAllUser"  resultMap="BaseResultMap">  
+    select * FROM print_field;  
+  </select>  
+</mapper>
